@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+h1,h2,h3,h4,h5,h6 {
+    color: #090e3a;
+}
+
+.payonner_area {
+    height: 100vh;
+    background: #ff7e4c;
+    padding: 100px;
+}
+.payonner_main {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 #21252957;
+}
+
+.payonner_sidebar {
+    background: #090e3a;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+}
+
+.logo {
+    padding: 30px;
+}
+
+.nav .nav-item .nav-link {
+   padding: 8px 30px;
+   color: #ffffff;
+}
+
+.nav .nav-item .nav-link:hover {
+    background: #ff7e4c;
+}
+
+.nav .nav-item .nav-link.active {
+    background: #ff7e4c;
+    color: #ffffff;
+}
+
+.payonner_content {
+    padding: 30px;
+}
+
+.payonner_content .card-body .card-text {
+    font-size: 13px;
+    color: #66707a;
+    margin-bottom: 5px !important;
+    font-weight: 500;
+}
+
+.payonner_content .card-body .card-title {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.payonner_content .card-body .btn  {
+    padding: 0;
+    color: #ff7e4c;
+    font-size: 17px !important;
+    font-weight: 500;
+    position: relative;
+}
+
+.payonner_content .card-body .btn:focus {
+    box-shadow: 0 0 0 0 transparent
+}
+
+.payonner_content .card-body .btn.deposit {
+    color: green;
+    margin-right: 10px;
+}
+
+/* Deposit and Withdraw Form */
+.input-group .form-select {
+    max-width: 130px;
+}
+
+.input-group .btn {
+    color: #000000;
+    border: 1px solid #ced4da;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.input-group .btn:hover {
+    color: #ff7e4c;
+}
+
+/* Transection Area */
+
+.transection_area {
+    border: 1px solid #ced4da;
+}
+
+.transection_area .table>:not(:last-child)>:last-child>* {
+    border-bottom-color: #ddd;
+}
+
+.transection_area .table>:not(caption)>*>*{
+    padding: 10px 0;
+}
+
+#deposit_form, #withdraw_form {
+    display: none;
+}
+
+.toast {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+
+.toast-header {
+    background: green;
+    color: #ddd;
+}
