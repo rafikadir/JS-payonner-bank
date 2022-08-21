@@ -6,7 +6,7 @@ for (let i = 0; i < depositShowBtn.length; i++) {
     });
 }
 
-// Deposit Form Open
+// Withdraw Form Open
 const withdrawShowBtn = document.getElementsByClassName("withdraw");
 for (let i = 0; i < withdrawShowBtn.length; i++) {
     withdrawShowBtn[i].addEventListener("click",function(){
@@ -60,14 +60,23 @@ function displayDeposit(){
 
         if(getCurrency == 1) {
             depositTotalUsd.innerText = ammountNum + prevDepositTotalUsd;
+            const history = ammountNum;
+            const currency = "USD";
+            transectionHistory(history, currency, true);
         }
 
         else if (getCurrency == 2) {
             depositTotalEuro.innerText = ammountNum + prevDepositTotalEuro;
+            const history = ammountNum;
+            const currency = "EURO";
+            transectionHistory(history, currency);
         }
 
         else if (getCurrency == 3) {
             depositTotalGbp.innerText = ammountNum + prevDepositTotalGbp;
+            const history = ammountNum;
+            const currency = "GBP";
+            transectionHistory(history, currency);
         }
 
         else {
@@ -108,8 +117,11 @@ function displayWithdraw(){
         const getCurrency = document.getElementById('withdraw_currency').value;
 
         if(getCurrency == 1) {
-            if(prevDepositTotalUsd != 0) {
+            if(prevDepositTotalUsd >= ammountNum ) {
                 withdrawTotalUsd.innerText = prevDepositTotalUsd - ammountNum;
+                const history = ammountNum;
+                const currency = "USD";
+                transectionHistory(history, currency, false);
             }
             
             else {  
@@ -119,22 +131,28 @@ function displayWithdraw(){
         }
     
         else if (getCurrency == 2) {
-            if(prevDepositTotalUsd != 0) {
+            if(prevDepositTotalEuro >= ammountNum) {
                 withdrawTotalEuro.innerText = prevDepositTotalEuro - ammountNum;
+                const history = ammountNum;
+                const currency = "EURO";
+                transectionHistory(history, currency, false);
             }
             
             else {  
-               
+                notFund();
             }
         }
     
         else if (getCurrency == 3) {
-            if(prevDepositTotalUsd != 0) {
+            if(prevDepositTotalGbp >= ammountNum) {
                 withdrawTotalGbp.innerText = prevDepositTotalGbp - ammountNum;
+                const history = ammountNum;
+                const currency = "GBP";
+                transectionHistory(history, currency, false);
             }
             
             else {  
-                
+                notFund();
             }
         }
     
@@ -171,8 +189,25 @@ function notFund(){
     setTimeout(function(){
         getToast.classList.remove("show");
     },3000)
+}
 
-    if(hide == true){
-        getToast.classList.add("hide");
-    }
+// ADD Transection History
+function transectionHistory(history, currency, isDeposited) {
+    const date = new Date().toLocaleDateString();
+    const table = document.getElementById('tbody');
+    const tr = document.createElement('tr');
+    const td_num = document.createElement('td');
+    const td_ammount = document.createElement('td');
+    const td_currency = document.createElement('td');
+    const td_status = document.createElement('td');
+    td_num.innerHTML = date;
+    td_ammount.innerHTML = "$" + history;
+    td_currency.innerHTML = currency;
+    td_status.innerHTML = isDeposited ? 'Deposit' : 'Withdraw';
+
+    const addTr = table.appendChild(tr);
+    addTr.appendChild(td_num);
+    addTr.appendChild(td_ammount);
+    addTr.appendChild(td_currency);
+    addTr.appendChild(td_status);
 }
