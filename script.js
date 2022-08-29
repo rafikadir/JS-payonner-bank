@@ -69,14 +69,14 @@ function displayDeposit(){
             depositTotalEuro.innerText = ammountNum + prevDepositTotalEuro;
             const history = ammountNum;
             const currency = "EURO";
-            transectionHistory(history, currency);
+            transectionHistory(history, currency, true);
         }
 
         else if (getCurrency == 3) {
             depositTotalGbp.innerText = ammountNum + prevDepositTotalGbp;
             const history = ammountNum;
             const currency = "GBP";
-            transectionHistory(history, currency);
+            transectionHistory(history, currency, true);
         }
 
         else {
