@@ -125,3 +125,68 @@ h1,h2,h3,h4,h5,h6 {
     background: green;
     color: #ddd;
 }
+
+@media (max-width:575px) {
+    .payonner_area {
+        height: 100%;
+        padding: 50px 0px;
+    }
+
+    .nav .nav-item .nav-link {
+        padding: 8px 10px;
+    }
+
+    .payonner_sidebar {
+        border-radius: 0;
+    }
+
+    .input-group .form-control {
+        width: 100%;
+        margin-bottom: 2px;
+    }
+
+    .input-group .form-select {
+        max-width: 100%;
+        width: inherit;
+        margin-bottom: 5px;
+    }
+
+    .input-group .btn {
+        width: 100%;
+    }
+
+    .toast {
+        position: fixed;
+        bottom: 20px;
+        right: 0;
+        left: 0;
+        width: 90%;
+        margin: auto;
+        background-color: rgba(255,255,255,1);
+        z-index: 999999;
+    }
+
+    .payonner_content {
+        padding: 30px 10px;
+    }
+
+    .transection_area td {
+        font-size: 12px;
+    }
+}
+
+
+@media (min-width: 576px) and (max-width: 767px){
+    .payonner_area {
+        height: 100%;
+        padding: 50px 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .payonner_area {
+        height: 100%;
+        padding: 50px 10px;
+    }
+}
+
